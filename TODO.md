@@ -14,3 +14,7 @@
     - React Router
     - MUI
     - eslint: lint, autofix, config (single quotes, 4 spaces etc.)
+
+4. Github actions
+
+5. CI/CD
