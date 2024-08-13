@@ -1,12 +1,13 @@
 1. Setup
     - [done] Start NestJS project
-    - Integrate with Prisma
-    - REST API wiwth 1 CRUD controller
+    - [done] Integrate with Prisma
+    - [done] REST API wiwth 1 CRUD controller
     - Authentication (JWT)
     - Authorization (Permissions, Roles)
-    - Open API / Swagger UI
+    - [done] Open API / Swagger UI
 
 2. Setup database (e.g. MySQL, SQLite)
+    - [done] Setup SQLite
 
 3. Setup FE
     - React with TS
