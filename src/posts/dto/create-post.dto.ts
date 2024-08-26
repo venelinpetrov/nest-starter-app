@@ -1,6 +1,6 @@
 export class CreatePostDto {
   title: string;
-  contetn: string;
+  content: string;
   published: boolean;
   authorId: number;
 }

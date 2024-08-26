@@ -16,6 +16,6 @@
     - MUI
     - [done] eslint: lint, autofix, config (single quotes, 4 spaces etc.)
 
-4. Github actions
-
-5. CI/CD
+4. Sentry integration
+5. Github actions
+6. CI/CD
