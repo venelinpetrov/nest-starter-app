@@ -10,11 +10,11 @@
     - [done] Setup SQLite
 
 3. Setup FE
-    - React with TS
+    - [done] React with TS
     - Redux toolkit (RTK)
     - React Router
     - MUI
-    - eslint: lint, autofix, config (single quotes, 4 spaces etc.)
+    - [done] eslint: lint, autofix, config (single quotes, 4 spaces etc.)
 
 4. Github actions
 
