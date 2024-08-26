@@ -11,7 +11,7 @@
 
 3. Setup FE
     - [done] React with TS
-    - Redux toolkit (RTK)
+    - [done] Redux toolkit (RTK)
     - React Router
     - MUI
     - [done] eslint: lint, autofix, config (single quotes, 4 spaces etc.)
