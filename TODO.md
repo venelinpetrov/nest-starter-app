@@ -5,6 +5,7 @@
     - Authentication (JWT)
     - Authorization (Permissions, Roles)
     - [done] Open API / Swagger UI
+    - BE tests
 
 2. Setup database (e.g. MySQL, SQLite)
     - [done] Setup SQLite
@@ -15,6 +16,8 @@
     - React Router
     - MUI
     - [done] eslint: lint, autofix, config (single quotes, 4 spaces etc.)
+    - e2e tests (e.g. cypress)
+    - unit tests with jest
 
 4. Sentry integration
 5. Github actions
