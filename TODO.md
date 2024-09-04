@@ -13,8 +13,8 @@
 3. Setup FE
     - [done] React with TS
     - [done] Redux toolkit (RTK)
-    - React Router
-    - MUI
+    - [done] React Router
+    - [done] MUI
     - [done] eslint: lint, autofix, config (single quotes, 4 spaces etc.)
     - e2e tests (e.g. cypress)
     - unit tests with jest
