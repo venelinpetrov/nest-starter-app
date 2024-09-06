@@ -7,8 +7,6 @@ import {
   Param,
   Delete,
   Query,
-  ParseBoolPipe,
-  DefaultValuePipe,
   ParseIntPipe,
 } from '@nestjs/common';
 import { PostsService } from './posts.service';
@@ -30,8 +28,10 @@ export class PostsController {
   @ApiQuery({ name: 'skip', required: false, type: String })
   @ApiQuery({ name: 'take', required: false, type: String })
   findAll(
-    @Query('skip', new ParseIntPipe()) skip: number,
-    @Query('take', new ParseIntPipe()) take: number,
+    @Query('skip', new ParseIntPipe({ optional: true }))
+    skip: number | undefined,
+    @Query('take', new ParseIntPipe({ optional: true }))
+    take: number | undefined,
   ) {
     return this.postsService.findAll(skip, take);
   }
