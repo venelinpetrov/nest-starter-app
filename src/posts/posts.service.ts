@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { CreatePostDto } from './dto/create-post.dto';
 import { UpdatePostDto } from './dto/update-post.dto';
 import { PrismaService } from 'src/prisma.service';
-
 @Injectable()
 export class PostsService {
   constructor(private prismaService: PrismaService) {}
@@ -11,8 +10,11 @@ export class PostsService {
     return this.prismaService.post.create({ data });
   }
 
-  findAll() {
-    return this.prismaService.post.findMany();
+  findAll(skip?: number, take?: number) {
+    return this.prismaService.post.findMany({
+      skip,
+      take,
+    });
   }
 
   findOne(id: number) {

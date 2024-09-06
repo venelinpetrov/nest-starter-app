@@ -6,11 +6,15 @@ import {
   Patch,
   Param,
   Delete,
+  Query,
+  ParseBoolPipe,
+  DefaultValuePipe,
+  ParseIntPipe,
 } from '@nestjs/common';
 import { PostsService } from './posts.service';
 import { CreatePostDto } from './dto/create-post.dto';
 import { UpdatePostDto } from './dto/update-post.dto';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiQuery, ApiTags } from '@nestjs/swagger';
 
 @Controller('posts')
 @ApiTags('posts')
@@ -23,8 +27,13 @@ export class PostsController {
   }
 
   @Get()
-  findAll() {
-    return this.postsService.findAll();
+  @ApiQuery({ name: 'skip', required: false, type: String })
+  @ApiQuery({ name: 'take', required: false, type: String })
+  findAll(
+    @Query('skip', new ParseIntPipe()) skip: number,
+    @Query('take', new ParseIntPipe()) take: number,
+  ) {
+    return this.postsService.findAll(skip, take);
   }
 
   @Get(':id')
