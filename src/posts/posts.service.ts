@@ -10,22 +10,34 @@ export class PostsService {
     return this.prismaService.post.create({ data });
   }
 
-  findAll(skip?: number, take?: number) {
-    return this.prismaService.post.findMany({
-      skip,
-      take,
-    });
+  async findAll(skip?: number, take?: number) {
+    const [result, count] = await this.prismaService.$transaction([
+      this.prismaService.post.findMany({
+        skip,
+        take,
+      }),
+      this.prismaService.post.count(),
+    ]);
+
+    return { result, count };
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} post`;
+    return this.prismaService.post.findUnique({
+      where: {
+        id,
+      },
+    });
   }
 
-  update(id: number, updatePostDto: UpdatePostDto) {
-    return `This action updates a #${id} post`;
+  update(id: number, data: UpdatePostDto) {
+    return this.prismaService.post.update({
+      where: { id },
+      data,
+    });
   }
 
   remove(id: number) {
-    return `This action removes a #${id} post`;
+    return this.prismaService.post.delete({ where: { id } });
   }
 }
